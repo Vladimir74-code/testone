@@ -7,7 +7,7 @@ def check_winner(board):
     #Проверяет, завершилась ли игра
     lines = board + list(zip(*board)) + [ [board[i][i] for i in range(3)], [board[i][2-i] for i in range(3)] ]
     if any(line[0] == line[1] == line[2] != " " for line in lines):
-        return line[0]
+        return lines[0]
     if all(cell != " " for row in board for cell in row):
         return "Ничья"
     return None
